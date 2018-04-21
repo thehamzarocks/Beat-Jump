@@ -1,0 +1,229 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "beat jump",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "SetupIntent",
+                    "slots": [],
+                    "samples": [
+                        "okay",
+                        "done",
+                        "i'm at the centre",
+                        "centred",
+                        "centre",
+                        "i've reached the centre",
+                        "I'm in the centre"
+                    ]
+                },
+                {
+                    "name": "SetupRepeatIntent",
+                    "slots": [],
+                    "samples": [
+                        "leaped",
+                        "leap",
+                        "i've jumped",
+                        "i've jumped now",
+                        "jump",
+                        "right",
+                        "jumped right",
+                        "jumped"
+                    ]
+                },
+                {
+                    "name": "SetupRepeatOverIntent",
+                    "slots": [],
+                    "samples": [
+                        "at the end",
+                        "i'm at the end",
+                        "i've reached the end",
+                        "it's over",
+                        "done",
+                        "over",
+                        "no more space"
+                    ]
+                },
+                {
+                    "name": "RandomBeatIntent",
+                    "slots": [],
+                    "samples": [
+                        "i'm up for dancing",
+                        "let's dance",
+                        "i'd like to dance",
+                        "i want to dance",
+                        "it's dancing time",
+                        "let's start dancing",
+                        "let's start",
+                        "let's jump",
+                        "dance",
+                        "I want to start dancing"
+                    ]
+                },
+                {
+                    "name": "CustomiseIntent",
+                    "slots": [],
+                    "samples": [
+                        "I'd like to set up again",
+                        "I want to set up",
+                        "set up",
+                        "I'd like to set up",
+                        "I'd like set up",
+                        "I'd like to get set up"
+                    ]
+                },
+                {
+                    "name": "CustomiseSpaceIntent",
+                    "slots": [],
+                    "samples": [
+                        "area",
+                        "space",
+                        "I want to know my space",
+                        "I'd like to set up my area",
+                        "I'd like to set up my dancing area",
+                        "I want to set up my dancing space",
+                        "I'd like to reorient my space",
+                        "I'd like to tell how much space I have"
+                    ]
+                },
+                {
+                    "name": "CustomiseDifficultyIntent",
+                    "slots": [],
+                    "samples": [
+                        "difficulty",
+                        "I want  to change the difficulty",
+                        "I want to set up the difficulty",
+                        "I want the difficulty to be changed",
+                        "It's too easy for me",
+                        "It's too hard for me",
+                        "Let's make it harder",
+                        "Let's make it easier",
+                        "Let's change the difficulty",
+                        "I want to make it easier",
+                        "I want to make it harder",
+                        "I want to make it more difficult",
+                        "I want to customise the difficulty",
+                        "I want to change the difficulty"
+                    ]
+                },
+                {
+                    "name": "SetDifficultyIntent",
+                    "slots": [
+                        {
+                            "name": "difficulty",
+                            "type": "Difficulty",
+                            "samples": [
+                                "make it {difficulty}",
+                                "set it to {difficulty}",
+                                "change it to {difficulty}",
+                                "I want to set the difficulty to {difficulty}",
+                                "i want to change the difficulty to {difficulty}",
+                                "{difficulty}"
+                            ]
+                        }
+                    ],
+                    "samples": [
+                        "{difficulty} is good for me",
+                        "I want it to be {difficulty}",
+                        "I want {difficulty}",
+                        "Let's change it to {difficulty}",
+                        "{difficulty}",
+                        "I want to change the difficulty to {difficulty}"
+                    ]
+                },
+                {
+                    "name": "SomethingElseIntent",
+                    "slots": [],
+                    "samples": [
+                        "I'd like to do something different",
+                        "I'd like to do something other than this",
+                        "Not dance",
+                        "something other than this",
+                        "something other",
+                        "what else",
+                        "tell me what else you can do",
+                        "What else can you do",
+                        "Something",
+                        "Something else",
+                        "Tell me what else can you do",
+                        "I'd like to do something else"
+                    ]
+                }
+            ],
+            "types": [
+                {
+                    "name": "Difficulty",
+                    "values": [
+                        {
+                            "name": {
+                                "value": "super easy"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "extra hard"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "hard"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "medium"
+                            }
+                        },
+                        {
+                            "name": {
+                                "value": "easy"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "SetDifficultyIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "difficulty",
+                            "type": "Difficulty",
+                            "confirmationRequired": false,
+                            "elicitationRequired": true,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.969661129802.1475782921425"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.969661129802.1475782921425",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Please choose a difficult level from super easy, easy, medium, hard, and extra hard"
+                    }
+                ]
+            }
+        ]
+    }
+}
